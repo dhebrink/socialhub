@@ -9,7 +9,7 @@
     <ul>
         {% for post in blog_posts %}
             <li>
-                <strong>{{ post.title }}</strong>
+                <a href="{% url 'blog-detail' post.id %}"> <strong>{{ post.title }}</strong> </a>
                 <p>
                     {{ post.summary }}
                 </p>

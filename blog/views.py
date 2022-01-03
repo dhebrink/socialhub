@@ -11,3 +11,9 @@ class PostList(generic.ListView):
     def get_queryset(self):
         qs = super().get_queryset()
         return qs.order_by("-created_at")
+
+
+class PostDetail(generic.DetailView):
+    template_name = "blog/detail.html"
+    model = models.Post
+    context_object_name = "blog_post"

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Blog - {{ block.super }} {% endblock %}
+
+{% block body %}
+
+    <h2>{{ blog_post.title }}</h2>
+
+    <h4> {{ blog_post.summary }} </h4>
+
+    <p>
+        {{ blog_post.content }}
+    </p>
+
+    <p>
+        Published by: {{ blog_post.author.name }} <br/>
+        Created: {{ blog_post.created_at|date }} <br/>
+        Last Updated: {{ blog_post.updated_at|date }} <br/>
+    </p>
+
+{% endblock %}
