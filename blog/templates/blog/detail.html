@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %} Blog - {{ block.super }} {% endblock %}
-
 {% block body %}
+
+<a href="/">Home</a> --
+<a href="{% url 'blog-list' %}">Blogs</a>
 
     <h2>{{ blog_post.title }}</h2>
 
