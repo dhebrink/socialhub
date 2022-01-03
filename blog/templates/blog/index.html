@@ -4,17 +4,22 @@
 
 <a href="/">Home</a>
 
+<div class="container">
     <h2>Blog Posts</h2>
 
-    <ul>
-        {% for post in blog_posts %}
-            <li>
-                <a href="{% url 'blog-detail' post.id %}"> <strong>{{ post.title }}</strong> </a>
-                <p>
-                    {{ post.summary }}
-                </p>
-            </li>
-        {% endfor %}
-    </ul>
-
+    {% for post in blog_posts %}
+        <div class="col-md-6">
+            <h3 class="display-4 fst-italic">
+                {{ post.title }}
+            </h3>
+            <p class="lead my-3">
+                {{ post.summary }}
+            </p>
+            <p>
+                <a href="{% url 'blog-detail' post.id %}" >Continue reading...</a>
+            </p>
+        </div>
+        <hr/>
+    {% endfor %}
+</div>
 {% endblock %}
