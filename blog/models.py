@@ -8,6 +8,9 @@ LARGE_CHAR_MAX = 200
 class Author(models.Model):
     name = models.CharField(max_length=MED_CHAR_MAX)
 
+    def __str__(self):
+        return self.name
+
 
 class Post(models.Model):
     title = models.CharField(max_length=MED_CHAR_MAX)
@@ -18,6 +21,9 @@ class Post(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(null=True, auto_now=True)
+
+    def __str__(self):
+        return f"{self.title} ({self.created_at})"
 
 
 class Comment(models.Model):
