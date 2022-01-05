@@ -2,17 +2,20 @@
 
 {% block body %}
 
-<a href="/">Home</a> --
-<a href="{% url 'blog-list' %}">Blogs</a>
+    <div class="jumbotron">
+        <h2 class="display-4">
+            {{ blog_post.title }}
+        </h2>
+        <p class="lead">
+            {{ blog_post.summary }}
+        </p>
+        <hr class="my-4">
+        <p>
+            {{ blog_post.content }}
+        </p>
 
-    <h2>{{ blog_post.title }}</h2>
-
-    <h4> {{ blog_post.summary }} </h4>
-
-    <p>
-        {{ blog_post.content }}
-    </p>
-
+        <a class="mt-4 btn btn-primary btn-md" href="#" role="button">Comment Below!</a>
+    </div>
     <p>
         Published by: {{ blog_post.author.name }} <br/>
         Created: {{ blog_post.created_at|date }} <br/>
