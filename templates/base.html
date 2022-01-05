@@ -15,30 +15,36 @@
 
 <body>
 
-    <div id="content" class="main">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <h1 class="mt-2">Social Hub</h1>
-                <hr class="mt-0 mb-4">
-
-            <nav class="navbar navbar-default navbar-static-top">
-                <div class="container">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'home-page' %}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'social-media' %}">Social Media</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'blog-list' %}">Blog</a>
-                        </li>
-                    </ul>
+    <div class="container">
+        <div id="content" class="main justify-content-center">
+            <div class="row justify-content-center">
+                <div class="row col-10">
+                    <div class="col-6">
+                        <h1 class="mt-2">
+                            <a class="text-reset" href="{% url 'home-page' %}">Social Hub</a>
+                        </h1>
+                    </div>
+                    <div class="col-4">
+                        <nav class="navbar navbar-default navbar-static-top">
+                            <div class="container">
+                                <ul class="nav nav-pills justify-content-end">
+                                    <li class="nav-item">
+                                        <a class="nav-link {% if 'social' in request.path %} active {% endif %}" href="{% url 'social-media' %}">Social Media</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {% if 'blog' in request.path %} active {% endif %}" href="{% url 'blog-list' %}">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <hr class="mb-4">
                 </div>
-            </nav>
-
+            </div>
+        </div>
+        <div>
+            <div class="container">
                 {% block body %} {% endblock %}
-
             </div>
         </div>
     </div>
