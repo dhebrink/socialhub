@@ -19,6 +19,7 @@ from django.urls import path, include
 from . import views
 urlpatterns = [
     path("", views.HomePage.as_view(), name="home-page"),
+    path("social-media/", views.SocialPage.as_view(), name="social-media"),
     path("blog-posts/", include("blog.urls")),
     path('admin/', admin.site.urls),
 ]
